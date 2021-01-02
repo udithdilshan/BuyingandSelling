@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1216.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.buyingandselling.controller.DashboardController">
+   <bottom>
+      <BarChart fx:id="brNoOfSalles" barGap="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" title="No Of Sales and Stock Purchses" BorderPane.alignment="CENTER">
+         <xAxis>
+            <CategoryAxis label="Date" startMargin="2.0" tickLabelGap="1.0" tickLabelRotation="270.0">
+               <tickLabelFont>
+                  <Font size="12.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+         </xAxis>
+         <yAxis>
+            <NumberAxis label="No Of Sales/Purchases" prefHeight="171.0" prefWidth="59.0" side="LEFT">
+               <tickLabelFont>
+                  <Font size="12.0" />
+               </tickLabelFont>
+            </NumberAxis>
+         </yAxis>
+      </BarChart>
+   </bottom>
+   <center>
+      <LineChart fx:id="lineChart" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <xAxis>
+            <CategoryAxis label="Date" side="BOTTOM" tickLabelRotation="270.0" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis label="Amount (Rs.)" side="LEFT" />
+         </yAxis>
+      </LineChart>
+   </center>
+   <left>
+      <Label fx:id="nodeDisplay" visible="false" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>

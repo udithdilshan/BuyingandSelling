@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="display" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1216.0" stylesheets="@../stylesheets/purchasestock.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.buyingandselling.controller.PurchaseStockController">
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="5.0" top="4.0" />
+         </BorderPane.margin>
+         <children>
+            <Label text="Purchase Stock">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <Separator prefHeight="4.0" prefWidth="15.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" top="16.0" />
+               </HBox.margin>
+            </Separator>
+            <Button fx:id="btnAddNewSupplier" mnemonicParsing="false" onAction="#addNewSupplier" style="-fx-background-color: #07689f;" text="Add New Supplier" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="4.0" />
+               </HBox.margin>
+            </Button>
+            <Separator prefHeight="4.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="15.0" right="10.0" top="16.0" />
+               </HBox.margin>
+            </Separator>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox minWidth="-Infinity" prefHeight="650.0" prefWidth="410.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <HBox maxWidth="-Infinity" minWidth="-Infinity" prefWidth="450.0" spacing="15.0">
+               <children>
+                  <Label text="Supplier ID">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField id="txtSupplierID" fx:id="txtSupplierID" minWidth="-Infinity" prefHeight="0.0" prefWidth="200.0" promptText="Supplier ID">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="4.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Region HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <VBox spacing="8.0">
+               <children>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin></Separator>
+                  <Label text="Supplier Name">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtSupplierName" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="400.0" promptText="Supplier Name">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Separator layoutX="10.0" layoutY="10.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin></Separator>
+               </children>
+            </VBox>
+            <VBox spacing="8.0">
+               <children>
+                  <Label text="Company Name">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtCompanyName" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="400.0" promptText="Company Name">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin></Separator>
+               </children>
+            </VBox>
+            <VBox spacing="8.0">
+               <children>
+                  <Label text="NIC">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtNIC" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="250.0" promptText="NIC">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin></Separator>
+               </children>
+            </VBox>
+            <VBox spacing="8.0">
+               <children>
+                  <Label text="Gender">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="350.0" spacing="10.0">
+                     <children>
+                        <JFXToggleButton fx:id="tgMale" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="143.0" text="Male">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXToggleButton>
+                        <JFXToggleButton fx:id="tgFemale" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="143.0" text="Female">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXToggleButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+               </children>
+            </VBox>
+            <VBox spacing="8.0">
+               <children>
+                  <Label text="City">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtCity" maxWidth="-Infinity" prefHeight="0.0" prefWidth="250.0" promptText="City">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+            <Region prefHeight="72.0" prefWidth="410.0" />
+            <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="417.0" spacing="15.0">
+               <children>
+                  <Button fx:id="btnCancel" layoutX="322.0" layoutY="15.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: #f73859;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: #00ad7c;" text="Search" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="25.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="-5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <ScrollPane fx:id="scrDiaplay" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="793.0" styleClass="scrDiaplay" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="vbLoader" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="770.0" spacing="10.0" styleClass="vbLoader">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></VBox>
+         </content>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Region HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Region>
+            <Button fx:id="btnNext" mnemonicParsing="false" prefHeight="39.0" prefWidth="164.0" style="-fx-background-color: #00ad7c;" text="Next" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" right="20.0" top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+</BorderPane>

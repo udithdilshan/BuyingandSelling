@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="display" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1216.0" stylesheets="@../stylesheets/button.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.buyingandselling.controller.CustomerOrderFormController">
+   <bottom>
+      <VBox prefHeight="359.0" prefWidth="1216.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="15.0">
+               <children>
+                  <JFXButton fx:id="btnCancel" buttonType="RAISED" layoutX="1065.0" layoutY="10.0" text="Cancel" visible="false">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="btnAddToCart" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="137.0" style="-fx-background-color: #00ad7c;" text="Add To Cart" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="4.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="tblOrderDetail" prefHeight="271.0" prefWidth="1216.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="itemCode" prefWidth="75.0" text="Item Code" />
+                  <TableColumn fx:id="batchNo" prefWidth="75.0" text="Batch No" />
+                  <TableColumn fx:id="description" prefWidth="75.0" text="Description" />
+                  <TableColumn fx:id="EXP" prefWidth="75.0" text="EXP" />
+                  <TableColumn fx:id="MFD" prefWidth="75.0" text="MFD" />
+                  <TableColumn fx:id="sectionName" prefWidth="75.0" text="Section Name" />
+                  <TableColumn fx:id="locationID" prefWidth="75.0" text="Location ID" visible="false" />
+                  <TableColumn fx:id="unitPrice" prefWidth="75.0" text="Unit Price" />
+                  <TableColumn fx:id="QTY" prefWidth="75.0" text="QTY" />
+                  <TableColumn fx:id="total" prefWidth="75.0" text="Total" />
+                  <TableColumn fx:id="rackNo" prefWidth="75.0" text="Rack No" visible="false" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <HBox spacing="20.0">
+               <children>
+                  <JFXButton fx:id="btnRemoveItem" buttonType="RAISED" prefHeight="44.0" prefWidth="170.0" style="-fx-background-color: #f73859;" text="Remove Item" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnEditItem" buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="162.0" style="-fx-background-color: #07689f;" text="Edit Item" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label text="Net Total">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets right="6.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="10.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rs.">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" top="6.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Label fx:id="lblNetTotal" layoutX="10.0" layoutY="10.0" text="0.00">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="/=">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" top="6.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Region layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="btnMakePayment" buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="183.0" style="-fx-background-color: #00ad7c;" text="Make Payment" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <VBox alignment="BASELINE_CENTER" prefHeight="289.0" prefWidth="1001.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="10.0" layoutY="52.0" spacing="15.0">
+               <children>
+                  <Label text="Item Detail">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Separator prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Separator>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="20.0" layoutY="78.0" spacing="30.0">
+               <children>
+                  <JFXTextField fx:id="txtItemCode" editable="false" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Item Code">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtCategory" editable="false" labelFloat="true" layoutX="50.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Category">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="162.0" spacing="15.0">
+               <VBox.margin>
+                  <Insets left="10.0" top="5.0" />
+               </VBox.margin>
+               <children>
+                  <JFXComboBox fx:id="cmbBatchNo" labelFloat="true" prefHeight="30.0" prefWidth="200.0" promptText="Batch No">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </JFXComboBox>
+                  <Label text="EXP">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <JFXDatePicker fx:id="dtEXP" disable="true" editable="false" prefHeight="25.0" prefWidth="230.0" />
+                  <Label text="MFD">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <JFXDatePicker fx:id="dtMFD" disable="true" editable="false" prefHeight="25.0" prefWidth="230.0" />
+                  <Region />
+               </children>
+            </HBox>
+            <HBox spacing="15.0">
+               <children>
+                  <JFXTextField fx:id="txtQTYOnHand" editable="false" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="QTY On Hand">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtUnitPrice" editable="false" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Unit Price">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="QTY">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" top="13.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField id="txtSupplierID" fx:id="txtQTY" prefHeight="30.0" prefWidth="200.0" promptText="QTY">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label prefHeight="21.0" prefWidth="45.0" text="Rs.">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="6.0" />
+                     </HBox.margin>
+                  </Label>
+                  <JFXTextField fx:id="txtTotal" editable="false" labelFloat="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Total">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="299.0" prefWidth="308.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="20.0">
+               <children>
+                  <Separator layoutX="74.0" layoutY="10.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Label text="Location Details">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Separator>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <JFXTextField fx:id="txtLocationID" editable="false" promptText="location ID">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="txtSectionName" editable="false" layoutX="10.0" layoutY="10.0" promptText="Section Name" />
+            <JFXTextField fx:id="txtRackNo" editable="false" layoutX="10.0" layoutY="10.0" promptText="Rack No" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="15.0">
+               <children>
+                  <Label text="Place Order">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Separator prefHeight="10.0" prefWidth="30.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets top="16.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Label text="Order ID">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="12.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField id="txtSupplierID" fx:id="txtOrderID" editable="false" prefHeight="37.0" prefWidth="181.0" promptText="Order ID">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Separator layoutX="274.0" layoutY="26.0" prefHeight="10.0" prefWidth="32.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets top="16.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Label text="No Of Items">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="12.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lblNoOfItems" layoutX="820.0" layoutY="18.0" prefHeight="21.0" prefWidth="65.0" text="0" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <JFXDatePicker fx:id="dtOrderDate" disable="true" prefHeight="25.0" prefWidth="230.0">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin></JFXDatePicker>
+                  <JFXTimePicker fx:id="tpOrderTime" disable="true">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </JFXTimePicker>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox spacing="15.0">
+               <children>
+                  <JFXComboBox fx:id="cmbItemDescription" editable="true" labelFloat="true" prefHeight="30.0" prefWidth="620.0" promptText="Item Description" visibleRowCount="12">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </JFXComboBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

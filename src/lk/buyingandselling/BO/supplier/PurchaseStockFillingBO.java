@@ -1,0 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lk.buyingandselling.BO.supplier;
+
+import java.util.ArrayList;
+import lk.buyingandselling.BO.SuperBO;
+import lk.buyingandselling.model.DTO.BatchDTO;
+import lk.buyingandselling.model.DTO.BatchDetailDTO;
+import lk.buyingandselling.model.DTO.PurchaseStockDTO;
+import lk.buyingandselling.model.DTO.PurchaseStockDetailDTO;
+
+/**
+ *
+ * @author SLR
+ */
+public interface PurchaseStockFillingBO extends SuperBO  {
+
+    public boolean savePurchaseStockDetails(PurchaseStockDTO purchaseStock,
+            ArrayList<BatchDTO> batchDTOs, ArrayList<BatchDetailDTO> addBatchDetail,
+            ArrayList<BatchDetailDTO> updateBatchDetail,
+            ArrayList<PurchaseStockDetailDTO> purchaseStockDetailDTO);
+
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.buyingandselling.controller.UserDashbordController">
+   <bottom>
+      <HBox spacing="15.0" styleClass="bottembar" stylesheets="@../stylesheets/userdashbord.css" BorderPane.alignment="CENTER">
+         <children>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label text="User Name" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="4.0" right="4.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Text fill="#e4bcbc" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="4.0" right="4.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Label layoutY="10.0" text="LogIn Time" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="4.0" right="4.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Text fill="#e4bcbc" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LogIn Time" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="4.0" right="4.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <left>
+      <VBox minWidth="-Infinity" prefWidth="155.0" spacing="8.0" styleClass="sidebar" stylesheets="@../stylesheets/userdashbord.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btndashboard" contentDisplay="TOP" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="145.0" styleClass="sidebar-btn" text="Dashboard" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="TACHOMETER" size="2em" />
+               </graphic></Button>
+            <Button fx:id="btnRegistration" contentDisplay="TOP" layoutX="10.0" layoutY="60.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="145.0" styleClass="sidebar-btn" text="Registration" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="PLUS_CIRCLE" size="2em" />
+               </graphic></Button>
+            <Button fx:id="btnCustomerOrder" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="145.0" styleClass="sidebar-btn" text="Customer Order" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CART_PLUS" size="2em" />
+               </graphic></Button>
+            <Button fx:id="btnPurchaseStock" contentDisplay="TOP" layoutX="10.0" layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="145.0" styleClass="sidebar-btn" text="Purchase Stock" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CUBES" size="2em" />
+               </graphic></Button>
+            <Button fx:id="btnInventory" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="145.0" styleClass="sidebar-btn" text="Inventory" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="SERVER" size="2em" />
+               </graphic></Button>
+            <Button fx:id="btnPayment" contentDisplay="TOP" layoutX="10.0" layoutY="85.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="145.0" styleClass="sidebar-btn" text="Payments" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="DOLLAR" size="2em" />
+               </graphic></Button>
+            <Region styleClass="sidebar-btn" visible="false" VBox.vgrow="ALWAYS" />
+            <Button fx:id="btnReport" contentDisplay="TOP" layoutX="10.0" layoutY="110.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="80.0" prefWidth="145.0" styleClass="sidebar-btn" text="Reports" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="LINE_CHART" size="2em" />
+               </graphic></Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="5.0" right="5.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <BorderPane fx:id="display" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
